@@ -1,0 +1,169 @@
+/* ---- FONDO GENERAL ---- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #5E7056, #8BA57B, #C5D7B3);
+}
+
+/* ---- HEADER ---- */
+header {
+    background: transparent;
+    padding: 15px;
+    text-align: center;
+}
+
+.logo {
+    height: 70px;
+}
+
+/* ---- FORMULARIO PRINCIPAL ---- */
+.form-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form-box {
+    width: 350px;
+    background: rgba(255,255,255,0.15);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 18px rgba(0,0,0,0.20);
+    text-align: center;
+    backdrop-filter: blur(6px);
+}
+
+.form-box h2 {
+    margin-bottom: 12px;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.banner-img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.form-box input {
+    width: 90%;
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #A7895A;
+    color: white;
+    font-size: 15px;
+}
+
+.form-box input::placeholder {
+    color: #F5F0E6;
+}
+
+.form-box button {
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    background: #8C6F3F;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.form-box button:hover {
+    background: #72592F;
+}
+
+/* ---- PANEL GENERAL ---- */
+.panel {
+    width: 80%;
+    margin: 30px auto;
+    background: rgba(255,255,255,0.15);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.20);
+    backdrop-filter: blur(4px);
+}
+
+.panel-title {
+    margin-top: 0;
+    border-bottom: 2px solid #8C6F3F;
+    padding-bottom: 5px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.panel-btn {
+    padding: 10px 15px;
+    background: #8C6F3F;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.panel-btn:hover {
+    background: #72592F;
+}
+
+.cancelar-btn {
+    background: #A74242 !important;
+}
+
+.cancelar-btn:hover {
+    background: #8E3333 !important;
+}
+
+/* ---- LISTA DE USUARIOS (GET) ---- */
+.lista-usuarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* MÁS ANCHO */
+    gap: 28px; /* MÁS ESPACIO ENTRE TARJETAS */
+    margin-top: 25px;
+}
+
+/* ---- TARJETAS DE USUARIOS ---- */
+.user-card {
+    background: rgba(255,255,255,0.25); /* MÁS SÓLIDO → YA NO SE PIERDE */
+    padding: 22px; /* MÁS ESPACIO INTERNO */
+    border-radius: 16px;
+    border: 1px solid #A7895A;
+    box-shadow: 0px 6px 16px rgba(0,0,0,0.25); /* SOMBRA MÁS MARCADA */
+    color: #060606;
+    backdrop-filter: blur(6px);
+    transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+/* Efecto hover elegante */
+.user-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.30);
+}
+
+.user-card b {
+    color: #0f0f0f;
+}
+
+/* ---- BOTONES DE ACCIÓN ---- */
+.card-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.card-btn {
+    padding: 10px 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+}
