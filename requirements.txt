@@ -1,3 +1,4 @@
-uvicorn  = 0.38.0
-fasapi   = 0.121.2
+uvicorn  == 0.38.0
+fasapi   == 0.121.2
 gunicorn
+
