@@ -1,33 +1,31 @@
-document.getElementById("formularioRegistro").addEventListener("submit", function (e) {
-  e.preventDefault();
+document.getElementById("formularioRegistro").addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-  const nombre = document.getElementById("nombre").value;
-  const email = document.getElementById("email").value;
-  const telefono = document.getElementById("telefono").value;
-  const password = document.getElementById("password").value;
+    const usuario = {
+        nombre: document.getElementById("nombre").value,
+        email: document.getElementById("email").value,
+        telefono: document.getElementById("telefono").value,
+        password: document.getElementById("password").value
+    };
 
-  fetch("/api/registro", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ nombre, email, telefono, password })
-  })
-  .then(res => res.text())
-  .then(mensaje => {
-    document.getElementById("resultado").innerText = mensaje;
-
-    if (mensaje === "Usuario registrado correctamente.") {
-      fetch("/api/usuarios")
-        .then(res => res.json())
-        .then(usuarios => {
-          const usuario = usuarios.find(u => u.email === email);
-          if (usuario) {
-            localStorage.setItem("id", usuario.id);
-            window.location.href = "login.html";
-          }
+    try {
+        const response = await fetch("http://127.0.0.1:8000/api/registro", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(usuario)
         });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert("✅ Registro exitoso: " + data.mensaje);
+            document.getElementById("formularioRegistro").reset();
+        } else {
+            alert("⚠ Error: " + data.mensaje);
+        }
+
+    } catch (error) {
+        alert("❌ Error de conexión con el servidor");
+        console.log(error);
     }
-  })
-  .catch(err => {
-    document.getElementById("resultado").innerText = "Error al registrar.";
-  });
 });
